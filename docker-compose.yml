@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  jupyter-tensorflow:
+    image: jupyter/tensorflow-notebook
+    container_name: jupyter-tensorflow
+    volumes:
+      - ./workdir:/home/jovyan/work
+    ports:
+      - "8001:8888"
+    restart: always
+    stdin_open: true
+    tty: true
+  jupyter-scipy:
+    image: jupyter/scipy-notebook
+    container_name: jupyter-scipy
+    volumes:
+      - ./workdir:/home/jovyan/work
+    ports:
+      - "8002:8888"
+    restart: always
+    stdin_open: true
+    tty: true
+
